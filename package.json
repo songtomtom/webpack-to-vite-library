@@ -23,7 +23,6 @@
     "test": "node test/node-smoke.cjs && node test/node-smoke.mjs"
   },
   "dependencies": {
-    "buffer": "^6.0.3",
     "hull.js": "^1.0.6",
     "twgl.js": "^5.5.4"
   },
