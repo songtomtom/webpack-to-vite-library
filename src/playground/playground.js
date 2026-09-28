@@ -14,3 +14,6 @@ log.textContent = [
     `a ∩ b: ${hit}`,
     `snapshot bytes(base64): ${renderer.snapshot().length}`
 ].join('\n');
+
+const outline = renderer.getHull();
+log.textContent += `\nhull: ${outline.length - 1}개 꼭짓점`;

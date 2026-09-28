@@ -31,10 +31,10 @@ export default defineConfig(({mode}) => {
             },
             rollupOptions: {
                 // 의존성은 번들에 넣지 않는다. 소비자의 번들러가 해결한다.
-                external: ['twgl.js'],
+                external: ['twgl.js', 'hull.js'],
                 output: {
                     // UMD는 전역 변수로 의존성을 찾는다
-                    globals: {'twgl.js': 'twgl'}
+                    globals: {'twgl.js': 'twgl', 'hull.js': 'hull'}
                 }
             },
             sourcemap: true

@@ -1,4 +1,5 @@
 import * as twgl from 'twgl.js';
+import hull from 'hull.js';
 
 import vertexShader from './shaders/sprite.vert?raw';
 import fragmentShader from './shaders/sprite.frag?raw';
@@ -34,6 +35,20 @@ class SpriteRenderer {
         const s = this._sprites[id];
         const half = s.size / 2;
         return new Rectangle(s.x - half, s.x + half, s.y - half, s.y + half);
+    }
+
+    /**
+     * 모든 스프라이트 꼭짓점을 감싸는 볼록 껍질. 드래그 선택 영역 같은 데 쓴다.
+     * hull.js는 CommonJS로만 배포되는 패키지다.
+     */
+    getHull () {
+        const points = [];
+        for (const s of this._sprites) {
+            const half = s.size / 2;
+            points.push([s.x - half, s.y - half], [s.x + half, s.y - half],
+                [s.x - half, s.y + half], [s.x + half, s.y + half]);
+        }
+        return hull(points, Infinity);
     }
 
     draw () {
