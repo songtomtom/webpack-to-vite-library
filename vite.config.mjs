@@ -34,10 +34,15 @@ export default defineConfig(({mode}) => {
                 external: ['twgl.js', 'hull.js'],
                 output: {
                     // UMD는 전역 변수로 의존성을 찾는다
-                    globals: {'twgl.js': 'twgl', 'hull.js': 'hull'}
+                    globals: {'twgl.js': 'twgl', 'hull.js': 'hull'},
+                    // webpack의 TerserPlugin drop_console 자리. Vite 8은 esbuild 대신 Rolldown(oxc) minifier를 쓴다.
+                    ...(mode === 'production' && {
+                        minify: {compress: {dropConsole: true, dropDebugger: true}, mangle: true, codegen: true}
+                    })
                 }
             },
-            sourcemap: true
+            // 소스맵은 개발 빌드에만. 배포 파일 옆에 소스가 통째로 붙는 걸 막는다.
+            sourcemap: mode !== 'production'
         }
     };
 });

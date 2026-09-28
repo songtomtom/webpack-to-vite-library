@@ -53,7 +53,9 @@ class SpriteRenderer {
 
     draw () {
         const gl = this._gl;
-        twgl.resizeCanvasToDisplaySize(gl.canvas);
+        if (twgl.resizeCanvasToDisplaySize(gl.canvas)) {
+            console.debug('canvas resized', gl.canvas.width, gl.canvas.height);
+        }
         gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
         gl.clearColor(1, 1, 1, 1);
         gl.clear(gl.COLOR_BUFFER_BIT);
