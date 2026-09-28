@@ -1,10 +1,10 @@
-const twgl = require('twgl.js');
+import * as twgl from 'twgl.js';
 
-const vertexShader = require('./shaders/sprite.vert');
-const fragmentShader = require('./shaders/sprite.frag');
-const Rectangle = require('./Rectangle');
-const {rgbToVec4} = require('./util/color');
-const {encodeSnapshot} = require('./util/snapshot');
+import vertexShader from './shaders/sprite.vert';
+import fragmentShader from './shaders/sprite.frag';
+import Rectangle from './Rectangle';
+import {rgbToVec4} from './util/color';
+import {encodeSnapshot} from './util/snapshot';
 
 /**
  * 캔버스 하나에 색 사각형 스프라이트를 그리는 최소 렌더러.
@@ -70,4 +70,4 @@ class SpriteRenderer {
     }
 }
 
-module.exports = SpriteRenderer;
+export default SpriteRenderer;

@@ -1,6 +1,6 @@
-/* Node 번들이 GPU 없이 import되고 순수 함수가 도는지 확인한다. */
+/* CommonJS 번들이 GPU 없이 import되고 순수 함수가 도는지 확인한다. */
 const assert = require('node:assert/strict');
-const lib = require('../dist/node/sprite-gl.js');
+const lib = require('../dist/node/sprite-gl.cjs');
 
 assert.deepEqual(lib.rgbToVec4(255, 0, 0), [1, 0, 0, 1]);
 assert.equal(lib.vec4ToCss([1, 0.5, 0, 1]), 'rgba(255, 128, 0, 1)');

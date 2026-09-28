@@ -1,6 +1,4 @@
-const SpriteRenderer = require('./SpriteRenderer');
-const Rectangle = require('./Rectangle');
-const {rgbToVec4, vec4ToCss} = require('./util/color');
-const {encodeSnapshot, decodeSnapshot} = require('./util/snapshot');
-
-module.exports = {SpriteRenderer, Rectangle, rgbToVec4, vec4ToCss, encodeSnapshot, decodeSnapshot};
+export {default as SpriteRenderer} from './SpriteRenderer';
+export {default as Rectangle} from './Rectangle';
+export {rgbToVec4, vec4ToCss} from './util/color';
+export {encodeSnapshot, decodeSnapshot} from './util/snapshot';
