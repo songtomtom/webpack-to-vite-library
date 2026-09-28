@@ -1,0 +1,26 @@
+{
+  "name": "sprite-gl",
+  "version": "0.1.0",
+  "description": "작은 WebGL 스프라이트 렌더러. webpack 3-config 빌드를 Vite 라이브러리 모드로 옮기는 예제.",
+  "main": "./dist/node/sprite-gl.js",
+  "browser": "./dist/web/sprite-gl.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "start": "webpack serve --mode development",
+    "test": "node test/node-smoke.js"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "copy-webpack-plugin": "^12.0.2",
+    "raw-loader": "^4.0.2",
+    "terser-webpack-plugin": "^5.3.10",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  },
+  "dependencies": {
+    "twgl.js": "^5.5.4"
+  }
+}
