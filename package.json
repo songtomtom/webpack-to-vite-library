@@ -24,10 +24,10 @@
   },
   "dependencies": {
     "buffer": "^6.0.3",
+    "hull.js": "^1.0.6",
     "twgl.js": "^5.5.4"
   },
   "devDependencies": {
-    "vite": "^8.3.1",
-    "vite-raw-plugin": "^1.0.2"
+    "vite": "^8.3.1"
   }
 }

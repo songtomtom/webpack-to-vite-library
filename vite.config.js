@@ -1,6 +1,5 @@
 import {resolve} from 'node:path';
 import {defineConfig} from 'vite';
-import rawPlugin from 'vite-raw-plugin';
 
 const root = process.cwd();
 
@@ -10,22 +9,15 @@ const root = process.cwd();
  *  - playground 모드: 데모 페이지를 일반 앱처럼 빌드하고 dev 서버로 띄운다.
  */
 export default defineConfig(({mode}) => {
-    const plugins = [
-        // 셰이더 파일을 문자열로. webpack의 raw-loader 자리.
-        rawPlugin({fileRegex: /\.(vert|frag|glsl)$/})
-    ];
-
     if (mode === 'playground') {
         return {
             root: resolve(root, 'src/playground'),
-            plugins,
             server: {port: 8361, open: true},
             build: {outDir: resolve(root, 'playground'), emptyOutDir: true}
         };
     }
 
     return {
-        plugins,
         build: {
             lib: {
                 entry: resolve(root, 'src/index.js'),

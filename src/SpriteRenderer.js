@@ -1,7 +1,7 @@
 import * as twgl from 'twgl.js';
 
-import vertexShader from './shaders/sprite.vert';
-import fragmentShader from './shaders/sprite.frag';
+import vertexShader from './shaders/sprite.vert?raw';
+import fragmentShader from './shaders/sprite.frag?raw';
 import Rectangle from './Rectangle';
 import {rgbToVec4} from './util/color';
 import {encodeSnapshot} from './util/snapshot';
